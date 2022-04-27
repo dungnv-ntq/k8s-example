@@ -16,7 +16,7 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "hello world, welcome to k8s!";
+        return "hello dungnv45, welcome to k8s!";
     }
 
     @GetMapping("/employee")
