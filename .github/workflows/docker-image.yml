@@ -14,5 +14,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag dungnv45:$(date +%s)
+    - name: Docker login
+      uses: docker/login-action@v1
+      with:
+        username: dungnv45
+        password: b76fe7cf-30f6-42aa-87be-a9d3ec072a0c
+
+    - name: Build and push
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        tags: dungnv45/simple-app:latest
