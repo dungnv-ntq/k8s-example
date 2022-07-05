@@ -25,6 +25,7 @@ jobs:
         tags: dungnv45/simple-app:latest
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
