@@ -53,3 +53,5 @@ jobs:
             kube/mongo.yaml
           images: |
             dungnv45/simple-app:latest
+          pull-images: true
+          strategy: canary
