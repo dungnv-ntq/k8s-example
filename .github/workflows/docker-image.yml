@@ -54,3 +54,4 @@ jobs:
           images: |
             dungnv45/simple-app:latest
           pull-images: true
+          force: true
