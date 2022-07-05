@@ -55,4 +55,6 @@ jobs:
             dungnv45/simple-app:latest
           pull-images: true
           force: true
-          run: kubectl rollout restart deployment simple-app
+
+      - name: Deploy
+        run: kubectl rollout restart deployment
