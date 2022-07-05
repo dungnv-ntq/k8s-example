@@ -24,26 +24,31 @@ jobs:
         push: true
         tags: dungnv45/simple-app:latest
 
-    # Set the target AKS cluster.
-    - uses: Azure/aks-set-context@v1
-      with:
-        creds: '${{ secrets.AZURE_CREDENTIALS }}'
-        cluster-name: my-aks-cluster
-        resource-group: my-azure-vm_group
+  deploy:
+    runs-on: ubuntu-latest
 
-    - uses: Azure/k8s-create-secret@v1.1
-      with:
-        container-registry-url: docker.io
-        container-registry-username: dungnv45
-        container-registry-password: b76fe7cf-30f6-42aa-87be-a9d3ec072a0c
-        secret-name: demo-k8s-secret
+    steps:
+      - uses: actions/checkout@v3
+      # Set the target AKS cluster.
+      - uses: Azure/aks-set-context@v1
+        with:
+          creds: '${{ secrets.AZURE_CREDENTIALS }}'
+          cluster-name: my-aks-cluster
+          resource-group: my-azure-vm_group
 
-    - uses: Azure/k8s-deploy@v3.1
-      with:
-        action: deploy
-        manifests: |
-          kube/k8s-deployment.yaml
-          kube/balance-service.yaml
-          kube/mongo.yaml
-        images: |
-          dungnv45/simple-app:latest
+      - uses: Azure/k8s-create-secret@v1.1
+        with:
+          container-registry-url: docker.io
+          container-registry-username: dungnv45
+          container-registry-password: b76fe7cf-30f6-42aa-87be-a9d3ec072a0c
+          secret-name: demo-k8s-secret
+
+      - uses: Azure/k8s-deploy@v3.1
+        with:
+          action: deploy
+          manifests: |
+            kube/k8s-deployment.yaml
+            kube/balance-service.yaml
+            kube/mongo.yaml
+          images: |
+            dungnv45/simple-app:latest
