@@ -16,7 +16,7 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "hello dungnv45!, welcome to azure kubernetes service!";
+        return "hello dungnv45!!, welcome to azure kubernetes service!";
     }
 
     @GetMapping("/employee")
