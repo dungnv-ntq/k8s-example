@@ -56,5 +56,5 @@ jobs:
           pull-images: true
           force: true
 
-      - name: Deploy to azure kubernetes service
+      - name: restart kubernetes for apply latest image
         run: kubectl rollout restart deployment

@@ -52,3 +52,6 @@ jobs:
           kubectl apply -f kube/k8s-deployment.yaml
           kubectl apply -f kube/mongo.yaml
           kubectl apply -f kube/balance-service.yaml
+
+      - name: restart kubernetes for apply latest image
+        run: kubectl rollout restart deployment
