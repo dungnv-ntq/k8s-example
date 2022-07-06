@@ -16,12 +16,12 @@ public class HelloController {
 
     @GetMapping("/hello-aks")
     public String helloAks() {
-        return "hello world from azure kubernetes service!!!!!";
+        return "hello world from azure kubernetes service!";
     }
 
     @GetMapping("/hello-eks")
     public String helloEks() {
-        return "hello world from elastic kubernetes service!!!!!!";
+        return "hello world, welcome to elastic kubernetes service!";
     }
 
     @GetMapping("/employee")
