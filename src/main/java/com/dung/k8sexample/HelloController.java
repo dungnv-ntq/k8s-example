@@ -14,9 +14,14 @@ public class HelloController {
     @Autowired
     private EmployeeRepository repository;
 
-    @GetMapping("/hello")
-    public String hello() {
-        return "hello world from azure kubernetes service!!!!!!";
+    @GetMapping("/hello-aks")
+    public String helloAks() {
+        return "hello world from azure kubernetes service!";
+    }
+
+    @GetMapping("/hello-eks")
+    public String helloEks() {
+        return "hello world from amazon kubernetes service!";
     }
 
     @GetMapping("/employee")
