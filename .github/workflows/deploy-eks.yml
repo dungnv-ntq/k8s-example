@@ -54,4 +54,6 @@ jobs:
           kubectl apply -f kube/balance-service.yaml
 
       - name: restart kubernetes for apply latest image
-        run: kubectl rollout restart deployment
+        run: |
+          kubectl rollout restart deployments -n kube-system
+          kubectl rollout restart deployment
