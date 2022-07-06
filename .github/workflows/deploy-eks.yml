@@ -50,4 +50,4 @@ jobs:
           kubectl apply -f kube/k8s-deployment.yaml
           kubectl apply -f kube/mongo.yaml
           kubectl apply -f kube/balance-service.yaml
-          kubectl rollout restart deployment
+          kubectl rollout restart deployment/simple-app
