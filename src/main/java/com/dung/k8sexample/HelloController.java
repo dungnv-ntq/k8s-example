@@ -21,7 +21,7 @@ public class HelloController {
 
     @GetMapping("/hello-eks")
     public String helloEks() {
-        return "hello world from amazon kubernetes service!";
+        return "hello world from elastic kubernetes service!";
     }
 
     @GetMapping("/employee")
