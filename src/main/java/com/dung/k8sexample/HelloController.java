@@ -21,8 +21,6 @@ public class HelloController {
 
     @GetMapping("/hello-eks")
     public String helloEks() {
-        String name="dung";
-        System.out.println("............."+name);
 
         return "hello world, welcome to elastic kubernetes service!";
     }
